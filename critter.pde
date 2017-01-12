@@ -4,6 +4,8 @@ class Critter {
   int health;
   int attack;
   PImage img;
+  ArrayList<Critter[]> combo = new ArrayList<Critter[]>();
+  
   Critter(String[] data) {
     stars = int(data[0]);
     if (!data[1].equals("??")) {
@@ -14,5 +16,9 @@ class Critter {
     img = loadImage(this.name.toLowerCase() + ".png");
     if(name.equals("vg_close"))
     img.resize(42, 42);
+  }
+  
+  void addCritterToCombo(Critter[] CC) {
+    combo.add(CC);
   }
 }
