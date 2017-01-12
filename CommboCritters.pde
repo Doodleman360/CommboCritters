@@ -2,7 +2,7 @@ ArrayList<Critter> CList = new ArrayList<Critter>();
 String[] data;
 
 void setup() {
-  size(300, 300);
+  size(450, 450);
   background(0);
   stroke(255);
   textAlign(CENTER, TOP);
@@ -63,4 +63,10 @@ void draw() {
   //}
   //image(imageTest,0,0);
   //noLoop();
+}
+
+void mousePressed() {
+  int x = mouseX/(width/9);
+  int y = mouseY/(height/9);
+  println(CList.get(x + (y*9)).name);
 }

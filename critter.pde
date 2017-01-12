@@ -12,6 +12,7 @@ class Critter {
     health = int(data[2]);
     attack = int(data[3]);
     img = loadImage(this.name.toLowerCase() + ".png");
-    //img.resize(50, 50);
+    if(name.equals("vg_close"))
+    img.resize(42, 42);
   }
 }
