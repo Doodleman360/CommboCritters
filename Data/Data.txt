@@ -1,4 +1,4 @@
-1,BlazingTurtle,5,2,BlazingTurtle+Pouteel,BlazingTurtle+Pouteel
+1,BlazingTurtle,5,2
 1,Pouteel,5,5
 1,Usaseal,7,1
 1,??,9,5
@@ -9,8 +9,8 @@
 1,Squito,11,5
 1,Shelly,15,3
 1,Mimic,100,1
-2,Goater,10,10
-2,Punchycarrot,15,9
+2,Goater,10,10,Usaseal+Shelly,Grog+Squito,Bigga+Bigga
+2,Punchycarrot,15,9,Blazing Turtle+Crawlson,Pouteel+Shelly,Usaseal+Stabbycarrot,Stabbycarrot+Stabbycarrot,Stabbycarrot+Grog,Crawlson+Crawlson,Crawlson+Grog,Crawlson+Shelly,Squito+Shelly
 2,??,15,10
 2,Octopussy,20,8
 2,Zombear,20,8
@@ -42,14 +42,14 @@
 5,Crybaman,65,45
 5,Bonare,65,30
 5,Eyemeleon,75,35
-5,Phenux,75,40
+5,Phenux,75,40,Beedeer+Bunner,Beedeer+Lizargo
 5,Wormer,75,35
 5,Bonerex,75,36
 5,Goatix,80,35
 5,Bigbun,85,30
 5,Tombi,90,30
 5,Cowcho,100,50
-5,Fatmeow,115,25
+5,Fatmeow,115,25,Lizargo+Bunner
 5,Tortolla,115,25
 6,Goldcat,100,55
 6,Heuhuebo,100,60

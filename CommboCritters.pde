@@ -58,6 +58,12 @@ void mousePressed() {
   }
 }
 
+void keyPressed() {
+    int x = mouseX/(width/9);
+    int y = mouseY/(height/9);
+    println(CList.get(x+(y*9)).name);
+}
+
 void drawAll() {
   imageMode(CORNER);
   background(0);
