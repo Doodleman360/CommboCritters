@@ -19,22 +19,21 @@ void setup() {
   }
   for (int i = 0; i < data.length; i++) {
     String[] SData = split(data[i], ',');
-    for (int j = 4; j < SData.length-1; j++) {
-      println(SData);
+    for (int j = 4; j < SData.length; j++) {
       String[] SString = split(SData[j], '+');
-      println(SString.length);
-      println("adding a combo to " + CList.get(i).name + "\nThe combo is " + SString[0] + " and " + SString[1]);
-      Critter[] CArray = new Critter[2];
-      for (Critter c : CList) {
-        if (c.name.equals(split(SData[j], '+')[0])) {
-          CArray[0] = c;
+      if (SString.length == 2) {
+        Critter[] CArray = new Critter[2];
+        for (Critter c : CList) {
+          if (c.name.equals(split(SData[j], '+')[0])) {
+            CArray[0] = c;
+          }
+          if (c.name.equals(split(SData[j], '+')[1])) {
+            CArray[1] = c;
+          }
         }
-        if (c.name.equals(split(SData[j], '+')[1])) {
-          CArray[1] = c;
-        }
-      }
 
-      CList.get(i).addCritterToCombo(CArray);
+        CList.get(i).addCritterToCombo(CArray);
+      }
     }
   }
 }
@@ -51,8 +50,6 @@ void mousePressed() {
   if (mode == -1) {
     int x = mouseX/(width/9);
     int y = mouseY/(height/9);
-    println("\nname: " + CList.get(x + (y*9)).name + "\nstars: " + CList.get(x + (y*9)).stars + "\nattack: " + CList.get(x + (y*9)).attack + "\nhealth: " + CList.get(x + (y*9)).health);
-    println(CList.get(x + (y*9)).combo);
     mode = (x + (y*9));
   } else {
     if (mouseX < 30 && mouseY < 30) {
@@ -88,7 +85,10 @@ void drawData() {
   text("attack: " + CList.get(mode).attack, width/2, 80);
   text("health: " + CList.get(mode).health, width/2, 95);
   text("combos: ", width/2, 110);
+  int mult = 0;
   for (Critter[] tempC : CList.get(mode).combo) {
-    image(tempC[0].img, width/2, 130);
+    image(tempC[0].img, width/2-(tempC[0].img.width), 130 + (mult));
+    image(tempC[1].img, width/2, 130 + (mult));
+    mult += 50;
   }
 }
