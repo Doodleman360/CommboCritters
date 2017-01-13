@@ -17,10 +17,13 @@ void setup() {
     String[] SData = split(i, ',');
     CList.add(new Critter(SData));
   }
-  for (int i = 0; i > data.length; i++) {
+  for (int i = 0; i < data.length; i++) {
     String[] SData = split(data[i], ',');
-    for (int j = 4; j > SData.length; j++) {
-      println("adding a combo to " + CList.get(i).name + "\nThe combo is " + split(SData[j], '+')[0] + " and " + split(SData[j], '+')[1]);
+    for (int j = 4; j < SData.length-1; j++) {
+      println(SData);
+      String[] SString = split(SData[j], '+');
+      println(SString.length);
+      println("adding a combo to " + CList.get(i).name + "\nThe combo is " + SString[0] + " and " + SString[1]);
       Critter[] CArray = new Critter[2];
       for (Critter c : CList) {
         if (c.name.equals(split(SData[j], '+')[0])) {
@@ -49,7 +52,7 @@ void mousePressed() {
     int x = mouseX/(width/9);
     int y = mouseY/(height/9);
     println("\nname: " + CList.get(x + (y*9)).name + "\nstars: " + CList.get(x + (y*9)).stars + "\nattack: " + CList.get(x + (y*9)).attack + "\nhealth: " + CList.get(x + (y*9)).health);
-    println(CList.get(x + (y*9)).combo.isEmpty());
+    println(CList.get(x + (y*9)).combo);
     mode = (x + (y*9));
   } else {
     if (mouseX < 30 && mouseY < 30) {
